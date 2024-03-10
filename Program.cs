@@ -37,97 +37,98 @@ namespace Lab_2
         }
     }
 
-    public class ServiceObject
-    {
-        public int Id { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public string CreatedBy { get; set; }
 
-        // constructor ServiceObject
-        public ServiceObject()
-        {
-            // Inicialize defalt data  Ініціалізуємо значення за замовчуванням
-            CreatedAt = DateTime.Now;
-            CreatedBy = Environment.UserName;
-        }
-    }
+    //public class ServiceObject
+    //{
+    //    public int Id { get; set; }
+    //    public DateTime CreatedAt { get; set; }
+    //    public string CreatedBy { get; set; }
 
-        public class Parcel : ServiceObject
-    {
-        public int Weight { get; set; }
-        public DateTime DateSend { get; set; }
-        public DateTime DateCome { get; set; }
-        public decimal Price { get; set; }
-        // parcel constructor
+    //    // constructor ServiceObject
+    //    public ServiceObject()
+    //    {
+    //        // Inicialize defalt data  Ініціалізуємо значення за замовчуванням
+    //        CreatedAt = DateTime.Now;
+    //        CreatedBy = Environment.UserName;
+    //    }
+    //}
 
-        public Parcel(int weight, DateTime dateSend, DateTime dateCome, decimal price)
-        {
-            Weight = weight;
-            DateSend = dateSend;
-            DateCome = dateCome;
-            Price = price;
-        }
-        // method for sending parcel
-        public void Send()
-        {
+     //public class Parcel : ServiceObject
+     //{
+     //   public int Weight { get; set; }
+     //   public DateTime DateSend { get; set; }
+     //   public DateTime DateCome { get; set; }
+     //   public decimal Price { get; set; }
+     //   // parcel constructor
 
-        }
-    }
-    public class City : ServiceObject
-    {
-        public string Name { get; set; }
-        public List<PostOffice> PostOffices { get; set; }
+     //   public Parcel(int weight, DateTime dateSend, DateTime dateCome, decimal price)
+     //   {
+     //       Weight = weight;
+     //       DateSend = dateSend;
+     //       DateCome = dateCome;
+     //       Price = price;
+     //   }
+     //   // method for sending parcel
+     //   public void Send()
+     //   {
 
-        public City(string name)
-        {
-            Name = name;
-            PostOffices = new List<PostOffice>();
-        }
+     //   }
+     //}
+    //public class City : ServiceObject
+    //{
+    //    public string Name { get; set; }
+    //    public List<PostOffice> PostOffices { get; set; }
 
-        public void AddPostOffice(PostOffice postOffice)
-        {
-            PostOffices.Add(postOffice);
-        }
-    }
+    //    public City(string name)
+    //    {
+    //        Name = name;
+    //        PostOffices = new List<PostOffice>();
+    //    }
 
-
-    public class PostOffice : ServiceObject
-    {
-            public List<Parcel> Parcels { get; set; }
-            // constructor
-            public PostOffice()
-            {
-                Parcels = new List<Parcel>();
-            }
-            // add parcel to office
-            public void AddParcel(Parcel parcel)
-            {
-                Parcels.Add(parcel);
-            }
-
-        }
-    public class Client : ServiceObject
-    {
-            public string Name { get; set; }
-            public string Surname { get; set; }
-
-            //constructor
-            public Client(string name, string surname)
-            {
-                Name = name;
-                Surname = surname;
-            }
-
-        public void SendParcel(Parcel parcel, PostOffice postOfifce  )
-        {
-            postOfifce.Parcels.Add(parcel);
-            parcel.Send();
-
-        }
+    //    public void AddPostOffice(PostOffice postOffice)
+    //    {
+    //        PostOffices.Add(postOffice);
+    //    }
+    //}
 
 
+    //public class PostOffice : ServiceObject
+    //{
+    //        public List<Parcel> Parcels { get; set; }
+    //        // constructor
+    //        public PostOffice()
+    //        {
+    //            Parcels = new List<Parcel>();
+    //        }
+    //        // add parcel to office
+    //        public void AddParcel(Parcel parcel)
+    //        {
+    //            Parcels.Add(parcel);
+    //        }
 
-        }
+    //    }
+//    public class Client : ServiceObject
+//    {
+//            public string Name { get; set; }
+//            public string Surname { get; set; }
+
+//            //constructor
+//            public Client(string name, string surname)
+//            {
+//                Name = name;
+//                Surname = surname;
+//            }
+
+//        public void SendParcel(Parcel parcel, PostOffice postOfifce  )
+//        {
+//            postOfifce.Parcels.Add(parcel);
+//            parcel.Send();
+
+//        }
+
+
+
+//        }
     
 }
     
