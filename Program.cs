@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Lab_2
 {
@@ -34,8 +36,69 @@ namespace Lab_2
             objects[2] = client;
 
 
+
+           
+
+
+
+
+        }
+        
+
+        
+
+
+
+
+    }
+
+
+
+
+
+
+
+    //Interface for process references Інтерфейс для обробки посилань
+    public interface ILinkProcessor
+    {
+        void ProcessLink(string link);
+    }
+
+    //Class which implement interface ILinkProcessor Клас, який реалізує інтерфейс ILinkProcessor
+    public class LinkProcessor : ILinkProcessor
+    {
+        public void ProcessLink(string link)
+        {
+            Console.WriteLine($"Processing link: {link}");
         }
     }
+
+
+
+    //Delegate for processing link Делегат для обробки лінків
+    public delegate void LinkHandler(string link);
+
+    //Class what uses delegate Клас, що використовує делегат
+    public class LinkProcessorDelegate
+    {
+        public void ProcessLink(string link, LinkHandler handler)
+        {
+            handler?.Invoke(link);
+
+          
+        }
+
+
+      
+    }
+
+
+
+
+
+
+
+    
 
 
     //public class ServiceObject
@@ -53,27 +116,27 @@ namespace Lab_2
     //    }
     //}
 
-     //public class Parcel : ServiceObject
-     //{
-     //   public int Weight { get; set; }
-     //   public DateTime DateSend { get; set; }
-     //   public DateTime DateCome { get; set; }
-     //   public decimal Price { get; set; }
-     //   // parcel constructor
+    //public class Parcel : ServiceObject
+    //{
+    //    public int Weight { get; set; }
+    //    public DateTime DateSend { get; set; }
+    //    public DateTime DateCome { get; set; }
+    //    public decimal Price { get; set; }
+    //    // parcel constructor
 
-     //   public Parcel(int weight, DateTime dateSend, DateTime dateCome, decimal price)
-     //   {
-     //       Weight = weight;
-     //       DateSend = dateSend;
-     //       DateCome = dateCome;
-     //       Price = price;
-     //   }
-     //   // method for sending parcel
-     //   public void Send()
-     //   {
+    //    public Parcel(int weight, DateTime dateSend, DateTime dateCome, decimal price)
+    //    {
+    //        Weight = weight;
+    //        DateSend = dateSend;
+    //        DateCome = dateCome;
+    //        Price = price;
+    //    }
+    //    // method for sending parcel
+    //    public void Send()
+    //    {
 
-     //   }
-     //}
+    //    }
+    //}
     //public class City : ServiceObject
     //{
     //    public string Name { get; set; }
@@ -94,41 +157,41 @@ namespace Lab_2
 
     //public class PostOffice : ServiceObject
     //{
-    //        public List<Parcel> Parcels { get; set; }
-    //        // constructor
-    //        public PostOffice()
-    //        {
-    //            Parcels = new List<Parcel>();
-    //        }
-    //        // add parcel to office
-    //        public void AddParcel(Parcel parcel)
-    //        {
-    //            Parcels.Add(parcel);
-    //        }
+    //    public List<Parcel> Parcels { get; set; }
+    //    // constructor
+    //    public PostOffice()
+    //    {
+    //        Parcels = new List<Parcel>();
+    //    }
+    //    // add parcel to office
+    //    public void AddParcel(Parcel parcel)
+    //    {
+    //        Parcels.Add(parcel);
+    //    }
+
+    //}
+    //public class Client : ServiceObject
+    //{
+    //    public string Name { get; set; }
+    //    public string Surname { get; set; }
+
+    //    //constructor
+    //    public Client(string name, string surname)
+    //    {
+    //        Name = name;
+    //        Surname = surname;
+    //    }
+
+    //    public void SendParcel(Parcel parcel, PostOffice postOfifce)
+    //    {
+    //        postOfifce.Parcels.Add(parcel);
+    //        parcel.Send();
 
     //    }
-//    public class Client : ServiceObject
-//    {
-//            public string Name { get; set; }
-//            public string Surname { get; set; }
-
-//            //constructor
-//            public Client(string name, string surname)
-//            {
-//                Name = name;
-//                Surname = surname;
-//            }
-
-//        public void SendParcel(Parcel parcel, PostOffice postOfifce  )
-//        {
-//            postOfifce.Parcels.Add(parcel);
-//            parcel.Send();
-
-//        }
 
 
 
-//        }
-    
+    //}
+
 }
-    
+

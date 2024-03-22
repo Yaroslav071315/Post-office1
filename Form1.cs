@@ -79,36 +79,64 @@ namespace Lab_2
 
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
-            //get data from field
+            ////get data from field
+            //int weight = int.Parse(materialSingleLineTextField1.Text);
+            //DateTime dateSend = DateTime.Parse(materialSingleLineTextField2.Text);
+            //DateTime dateCome = DateTime.Parse(materialSingleLineTextField3.Text);
+            //decimal price = decimal.Parse(materialSingleLineTextField4.Text);
+
+
+
+
+
+
+            ////get data for writing
+            //string weightW = materialSingleLineTextField1.Text;
+            //string dateSendW = materialSingleLineTextField2.Text;
+            //string dateComeW = materialSingleLineTextField3.Text;
+            //string priceW = materialSingleLineTextField4.Text;
+
+            ////write inside text file
+            //using (StreamWriter writer = new StreamWriter("D:\\Student\\Lab_2\\INFO.TXT", true))
+            //{
+            //    writer.WriteLine($" {weightW}, {dateSendW}, {dateComeW}, {priceW}");
+            //}
+
+            //// clear text boxes
+            //materialSingleLineTextField1.Clear();
+            //materialSingleLineTextField2.Clear();
+            //materialSingleLineTextField3.Clear();
+            //materialSingleLineTextField4.Clear();
+
+            //MessageBox.Show("Horay, parcel sended!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            //Get data from field Отримуємо дані з полів форми
             int weight = int.Parse(materialSingleLineTextField1.Text);
             DateTime dateSend = DateTime.Parse(materialSingleLineTextField2.Text);
             DateTime dateCome = DateTime.Parse(materialSingleLineTextField3.Text);
             decimal price = decimal.Parse(materialSingleLineTextField4.Text);
 
+            //Form string for writing in file Формуємо рядок для запису в файл
+            string data = $"{weight}, {dateSend}, {dateCome}, {price}";
 
+            //Write data inside file with succor static-class FileHelper Записуємо дані у файл за допомогою класу-допоміжника
+            FileHelper.WriteToFile("D:\\Student\\Lab_2\\INFO.TXT", data);
 
-
-
-
-            //get data for writing
-            string weightW = materialSingleLineTextField1.Text;
-            string dateSendW = materialSingleLineTextField2.Text;
-            string dateComeW = materialSingleLineTextField3.Text;
-            string priceW = materialSingleLineTextField4.Text;
-
-            //write inside text file
-            using (StreamWriter writer = new StreamWriter("D:\\Student\\Lab_2\\INFO.TXT", true))
-            {
-                writer.WriteLine($" {weightW}, {dateSendW}, {dateComeW}, {priceW}");
-            }
-            
-            // clear text boxes
+            //Clear text Fields Очищаємо текстові поля
             materialSingleLineTextField1.Clear();
             materialSingleLineTextField2.Clear();
             materialSingleLineTextField3.Clear();
             materialSingleLineTextField4.Clear();
 
             MessageBox.Show("Horay, parcel sended!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+
+
+
+
+
 
 
 

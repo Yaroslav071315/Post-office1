@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Lab_2
 {
     public class ServiceObject
@@ -18,6 +19,14 @@ namespace Lab_2
             // Inicialize defalt data  Ініціалізуємо значення за замовчуванням
             CreatedAt = DateTime.Now;
             CreatedBy = Environment.UserName;
+        }
+
+
+        //use varius type of parameters
+
+        public void ProcessData(int value, ref string message, params string[] additionalInfo)
+        {
+            //Creation instructions Реалізація методу
         }
     }
 }
